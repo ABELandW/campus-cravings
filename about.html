@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About – Campus Cravings</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/my_style.css"/>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header text-center py-4">
+    <h1 class="brand-name">🍽️ Campus Cravings</h1>
+    <p class="tagline">Honest Reviews. Real Flavours. Every Bite Counts.</p>
+</header>
+
+<!-- NAV -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Campus Cravings</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+            aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="reviews.html">Reviews</a></li>
+                <li class="nav-item"><a class="nav-link" href="database.php">Database</a></li>
+                <li class="nav-item"><a class="nav-link" href="tools.html">Food Tools</a></li>
+                <li class="nav-item"><a class="nav-link" href="submit.html">Submit Review</a></li>
+                <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- MAIN -->
+<main class="container my-5">
+
+    <!-- BRAND / TEAM DESCRIPTION -->
+    <h2 class="section-heading">About Campus Cravings</h2>
+    <div class="intro-box p-4 rounded mb-4">
+        <p>
+            Campus Cravings is an independent food review platform created by 2 students at Victoria University, 
+            Melbourne. Our goal is to make dining decisions easier for everyone — regardless of their 
+            background, budget, or dietary preferences. We believe great food should be accessible to all people.
+        </p>
+        <p>
+            Our reviews are written honestly and without payment from restaurants. Every visit is made 
+            independently and every score is based on the same five-point criteria: taste, presentation, 
+            value, service, and atmosphere.
+        </p>
+
+        <h4>Meet the Team</h4>
+        <div class="row g-3">
+            <div class="col-md-6">
+                <div class="p-3 border rounded">
+                    <img src="images/team1.jpg"
+                         alt="Portrait photo of Abel Andwanaho, founder and lead reviewer at Able Eats"
+                         class="team-photo mb-2">
+                    <h5>Abel Andwanaho</h5>
+                    <p class="mb-0">Co-Founder &amp; Co-Reviewer. Passionate about exploring Melbourne's food scene to those lost students puching those cravings.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="p-3 border rounded">
+                    <img src="images/team2.jpg"
+                         alt="Portrait photo of the second team member and co-reviewer at Able Eats"
+                         class="team-photo mb-2">
+                    <h5>Cealeb Barcelon</h5>
+                    <p class="mb-0">Co-Founder &amp;Co-Reviewer. Focuses on dessert spots, cafes, and photography.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ACCESSIBILITY FEATURES (min 3 required) -->
+    <h2 class="section-heading">♿ Accessibility Features</h2>
+    <div class="intro-box p-4 rounded mb-4">
+        <p>Campus Cravings is built to be inclusive and accessible to all users, including those with disabilities.</p>
+
+        <!-- Feature 1: Text to Speech -->
+        <div class="mb-4">
+            <h5>1. 🔊 Read Aloud (Text-to-Speech)</h5>
+            <p>Highlight any text on this page and click the button below to have it read aloud.</p>
+            <textarea id="ttsInput" class="form-control mb-2" rows="3"
+                      placeholder="Type or paste text here to hear it read aloud..."
+                      aria-label="Text to be read aloud by screen reader"></textarea>
+            <button class="btn btn-orange" onclick="readAloud()" aria-label="Read aloud the text above">
+                🔊 Read Aloud
+            </button>
+            <button class="btn btn-outline-secondary ms-2" onclick="stopReading()" aria-label="Stop reading">
+                ⏹ Stop
+            </button>
+        </div>
+
+        <!-- Feature 2: Font Size -->
+        <div class="mb-4">
+            <h5>2. 🔤 Adjustable Font Size</h5>
+            <p>Use the buttons below to increase or decrease the text size on this page.</p>
+            <button class="btn btn-orange me-2" onclick="changeFontSize(1)" aria-label="Increase font size">
+                A+ Increase
+            </button>
+            <button class="btn btn-outline-secondary" onclick="changeFontSize(-1)" aria-label="Decrease font size">
+                A− Decrease
+            </button>
+            <button class="btn btn-outline-dark ms-2" onclick="resetFontSize()" aria-label="Reset font size to default">
+                Reset
+            </button>
+        </div>
+
+        <!-- Feature 3: High Contrast Mode -->
+        <div class="mb-4">
+            <h5>3. 🎨 High Contrast Mode</h5>
+            <p>Toggle high contrast mode for users with visual impairments or colour-blindness.</p>
+            <button class="btn btn-orange" onclick="toggleContrast()" id="contrastBtn"
+                    aria-label="Toggle high contrast mode">
+                Enable High Contrast
+            </button>
+        </div>
+
+        <!-- Keyboard note -->
+        <div class="mb-2">
+            <h5>4. ⌨️ Keyboard Navigation</h5>
+            <p>
+                All interactive elements on this website — buttons, links, and form fields — can be 
+                accessed using the <kbd>Tab</kbd> key. Press <kbd>Enter</kbd> to activate buttons.
+                This ensures all users can navigate without a mouse.
+            </p>
+        </div>
+    </div>
+
+    <!-- INCLUSIVE LANGUAGE STATEMENT -->
+    <h2 class="section-heading">🤝 Inclusive Language Commitment</h2>
+    <div class="intro-box p-4 rounded mb-4">
+        <p>
+            Campus Cravings is committed to using inclusive and respectful language across all content on 
+            this website. We use gender-neutral terms such as "visitors," "users," and "people" and 
+            avoid assumptions about gender, cultural background, or dietary beliefs.
+        </p>
+        <p>
+            We celebrate food from all cultures and treat every cuisine with equal respect. Our reviews 
+            aim to introduce people to diverse culinary traditions rather than rank them against one another.
+        </p>
+        <p>
+            If you notice any language in our content that feels disrespectful or exclusionary, 
+            please <a href="submit.html">contact us</a> and we will address it promptly.
+        </p>
+    </div>
+
+    <!-- FIRST NATIONS ACKNOWLEDGEMENT (required) -->
+    <h2 class="section-heading">🌿 Acknowledgement of Country</h2>
+    <div class="acknowledgement-box p-4 rounded mb-4">
+        <p>
+            Campus Cravings acknowledges the Traditional Custodians of the lands on which our team lives, 
+            works, and creates content — the Wurundjeri people of the Kulin Nation. We pay our deepest 
+            respects to Elders past, present, and emerging, and recognise their continuing connection 
+            to land, water, and community.
+        </p>
+        <p>
+            We acknowledge that sovereignty was never ceded and that we are grateful to create on 
+            Country. We are committed to supporting First Nations communities and businesses, 
+            including First Nations-owned food and hospitality enterprises.
+        </p>
+    </div>
+
+    <!-- CONTACT & SOCIAL LINKS -->
+    <h2 class="section-heading">📬 Contact & Social Links</h2>
+    <div class="intro-box p-4 rounded">
+        <ul class="list-unstyled">
+            <li class="mb-2">📧 Email: <a href="mailto:hello@ableeats.com.au">123456.com.au</a></li>
+            <li class="mb-2">📸 Instagram: <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">@abelx_a</a></li>
+            <li class="mb-2">🎵 TikTok: <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">@KABELLL</a></li>
+            <li class="mb-2">📍 Based in Melbourne, Victoria, Australia</li>
+        </ul>
+    </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer text-center py-4 mt-5">
+    <p>We acknowledge the Traditional Owners of the land on which this website was created — the Wurundjeri people of the Kulin Nation — and pay our respects to Elders past, present, and emerging.</p>
+    <p>Follow us: <a href="https://instagram.com" target="_blank">Instagram</a> | <a href="https://tiktok.com" target="_blank">TikTok</a></p>
+    <p>COPYRIGHT &copy; 2026 Campus Cravings| Abel and Caeleb</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // ---- Accessibility 1: Text to Speech ----
+    let utterance;
+    function readAloud() {
+        const text = document.getElementById('ttsInput').value.trim();
+        if (text === '') {
+            alert('Please type or paste some text into the box first.');
+            return;
+        }
+        window.speechSynthesis.cancel();
+        utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'en-AU';
+        window.speechSynthesis.speak(utterance);
+    }
+    function stopReading() {
+        window.speechSynthesis.cancel();
+    }
+
+    // ---- Accessibility 2: Font Size ----
+    let fontSize = 16;
+    function changeFontSize(direction) {
+        fontSize += direction * 2;
+        // Logic rule: clamp between 12 and 28
+        if (fontSize < 12) fontSize = 12;
+        if (fontSize > 28) fontSize = 28;
+        document.body.style.fontSize = fontSize + 'px';
+    }
+    function resetFontSize() {
+        fontSize = 16;
+        document.body.style.fontSize = '16px';
+    }
+
+    // ---- Accessibility 3: High Contrast Mode ----
+    function toggleContrast() {
+        document.body.classList.toggle('high-contrast');
+        const btn = document.getElementById('contrastBtn');
+        btn.textContent = document.body.classList.contains('high-contrast')
+            ? 'Disable High Contrast'
+            : 'Enable High Contrast';
+    }
+</script>
+
+</body>
+</html>

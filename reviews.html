@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews – Campus Cravings</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/my_style.css"/>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header text-center py-4">
+    <h1 class="brand-name">🍽️ Campus Cravings</h1>
+    <p class="tagline">Honest Reviews. Real Flavours. Every Bite Counts.</p>
+</header>
+
+<!-- NAV -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Campus Cravings</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+            aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="reviews.html">Reviews</a></li>
+                <li class="nav-item"><a class="nav-link" href="database.php">Database</a></li>
+                <li class="nav-item"><a class="nav-link" href="tools.html">Food Tools</a></li>
+                <li class="nav-item"><a class="nav-link" href="submit.html">Submit Review</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- MAIN -->
+<main class="container my-5">
+
+    <h2 class="section-heading">Our Latest Food Reviews</h2>
+
+    <!-- REVIEW CARDS WITH IMAGES -->
+    <div class="row g-4 mb-5">
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <img src="images/review1.jpg" class="card-img-top review-img"
+                     alt="A steaming bowl of tonkotsu ramen with chashu pork at Ramen Ya Melbourne">
+                <div class="card-body">
+                    <h5 class="card-title">Ramen Ya – Melbourne CBD</h5>
+                    <p class="card-text">Rich tonkotsu broth, perfectly cooked noodles, and melt-in-your-mouth chashu pork. Absolutely unmissable.</p>
+                    <span class="badge bg-warning text-dark">⭐ 5/5</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <img src="images/review2.jpg" class="card-img-top review-img"
+                     alt="Crispy Neapolitan pizza with buffalo mozzarella and fresh basil at a Melbourne pizzeria">
+                <div class="card-body">
+                    <h5 class="card-title">Napoli Fire – Fitzroy</h5>
+                    <p class="card-text">Wood-fired perfection. The buffalo mozzarella is flown in fresh and the charred crust is chef's kiss.</p>
+                    <span class="badge bg-warning text-dark">⭐ 4.5/5</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+                <img src="images/review3.jpg" class="card-img-top review-img"
+                     alt="Colourful poke bowl with salmon, avocado, edamame and sesame dressing">
+                <div class="card-body">
+                    <h5 class="card-title">Poke Planet – Brunswick</h5>
+                    <p class="card-text">Fresh, vibrant, and healthy. Build your own bowl with over 20 toppings. Great for vegetarians too.</p>
+                    <span class="badge bg-warning text-dark">⭐ 4/5</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- RATINGS TABLE (4+ rows required) -->
+    <h2 class="section-heading">Restaurant Ratings Table</h2>
+    <div class="table-responsive mb-5">
+        <table class="table table-bordered table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">Restaurant</th>
+                    <th scope="col">Cuisine</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">Price Range</th>
+                    <th scope="col">Rating</th>
+                    <th scope="col">Visited</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Ramen Ya</td>
+                    <td>Japanese</td>
+                    <td>Melbourne CBD</td>
+                    <td>$$</td>
+                    <td>⭐ 5/5</td>
+                    <td>March 2026</td>
+                </tr>
+                <tr>
+                    <td>Napoli Fire</td>
+                    <td>Italian</td>
+                    <td>Fitzroy</td>
+                    <td>$$$</td>
+                    <td>⭐ 4.5/5</td>
+                    <td>April 2026</td>
+                </tr>
+                <tr>
+                    <td>Poke Planet</td>
+                    <td>Hawaiian</td>
+                    <td>Brunswick</td>
+                    <td>$$</td>
+                    <td>⭐ 4/5</td>
+                    <td>April 2026</td>
+                </tr>
+                <tr>
+                    <td>Spice Garden</td>
+                    <td>Indian</td>
+                    <td>Dandenong</td>
+                    <td>$</td>
+                    <td>⭐ 4.5/5</td>
+                    <td>May 2026</td>
+                </tr>
+                <tr>
+                    <td>The Taco Bar</td>
+                    <td>Mexican</td>
+                    <td>Collingwood</td>
+                    <td>$$</td>
+                    <td>⭐ 3.5/5</td>
+                    <td>May 2026</td>
+                </tr>
+                <tr>
+                    <td>Pho Saigon</td>
+                    <td>Vietnamese</td>
+                    <td>Footscray</td>
+                    <td>$</td>
+                    <td>⭐ 5/5</td>
+                    <td>May 2026</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ORDERED LIST: How we rate -->
+    <div class="intro-box p-4 rounded mb-5">
+        <h3>How We Rate Restaurants</h3>
+        <p>Every review is scored across five categories, each equally weighted:</p>
+        <ol>
+            <li><strong>Taste</strong> – Is the food delicious and well-seasoned?</li>
+            <li><strong>Presentation</strong> – Does it look as good as it tastes?</li>
+            <li><strong>Value for Money</strong> – Is the price fair for the portion?</li>
+            <li><strong>Service</strong> – Were the staff friendly and efficient?</li>
+            <li><strong>Atmosphere</strong> – Is the venue comfortable and welcoming?</li>
+        </ol>
+
+        <!-- EXTERNAL LINK -->
+        <p class="mt-3">
+            Want to find more Melbourne restaurants? Visit
+            <a href="https://www.zomato.com/melbourne" target="_blank" rel="noopener noreferrer">
+                Zomato Melbourne
+            </a> for a full directory of local dining options.
+        </p>
+    </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer text-center py-4 mt-5">
+    <p>We acknowledge the Traditional Owners of the land on which this website was created — the Wurundjeri people of the Kulin Nation — and pay our respects to Elders past, present, and emerging.</p>
+    <p>Follow us: <a href="https://instagram.com" target="_blank">Instagram</a> | <a href="https://tiktok.com" target="_blank">TikTok</a></p>
+    <p>COPYRIGHT &copy; 2026 Campus Cravings | Abel and Cealeb</p>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <a href="index.html">Go back</a>  
+</body>
+</html> 

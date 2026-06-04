@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Tools – Campus Cravings</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/my_style.css"/>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header text-center py-4">
+    <h1 class="brand-name">🍽️Campus Cravings</h1>
+    <p class="tagline">Honest Reviews. Real Flavours. Every Bite Counts.</p>
+</header>
+
+<!-- NAV -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Campus Cravings</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+            aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="reviews.html">Reviews</a></li>
+                <li class="nav-item"><a class="nav-link" href="database.php">Database</a></li>
+                <li class="nav-item"><a class="nav-link active" href="tools.html">Food Tools</a></li>
+                <li class="nav-item"><a class="nav-link" href="submit.html">Submit Review</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- MAIN -->
+<main class="container my-5">
+
+    <h2 class="section-heading">🛠️ Food Tools</h2>
+    <p class="mb-4">Use these handy tools to help plan your meals and dining experiences.</p>
+
+    <div class="row g-4">
+
+        <!-- TOOL 1: Tip Calculator -->
+        <div class="col-md-6">
+            <div class="intro-box p-4 rounded">
+                <h4>💰 Restaurant Tip Calculator</h4>
+                <p>Enter your bill total and choose a tip percentage.</p>
+
+                <label for="billAmount" class="form-label">Bill Amount ($)</label>
+                <input type="number" id="billAmount" class="form-control mb-3"
+                       placeholder="e.g. 85.50" min="0" aria-label="Enter your bill amount in dollars">
+
+                <label for="tipPercent" class="form-label">Tip Percentage</label>
+                <select id="tipPercent" class="form-select mb-3" aria-label="Select tip percentage">
+                    <option value="10">10%</option>
+                    <option value="15" selected>15%</option>
+                    <option value="20">20%</option>
+                    <option value="25">25%</option>
+                </select>
+
+                <label for="numPeople" class="form-label">Number of People Splitting</label>
+                <input type="number" id="numPeople" class="form-control mb-3"
+                       placeholder="e.g. 4" min="1" value="1" aria-label="Number of people splitting the bill">
+
+                <!-- Event 1: click -->
+                <button class="btn btn-orange w-100" onclick="calculateTip()">Calculate Tip</button>
+
+                <div id="tipResult" class="mt-3 result-box" style="display:none;"></div>
+            </div>
+        </div>
+
+        <!-- TOOL 2: Calorie Estimator -->
+        <div class="col-md-6">
+            <div class="intro-box p-4 rounded">
+                <h4>🔥 Meal Calorie Estimator</h4>
+                <p>Estimate the calories of common meals.</p>
+
+                <label for="mealSelect" class="form-label">Choose a Meal</label>
+                <select id="mealSelect" class="form-select mb-3" aria-label="Select a meal to estimate calories">
+                    <option value="ramen">Ramen Bowl</option>
+                    <option value="pizza">Pizza Slice</option>
+                    <option value="burger">Burger</option>
+                    <option value="salad">Garden Salad</option>
+                    <option value="sushi">Sushi (8 pieces)</option>
+                    <option value="pho">Pho Bowl</option>
+                    <option value="tacos">Tacos (3 pieces)</option>
+                </select>
+
+                <label for="servings" class="form-label">Number of Servings</label>
+                <input type="number" id="servings" class="form-control mb-3"
+                       placeholder="e.g. 2" min="1" max="10" value="1" aria-label="Number of servings">
+
+                <!-- Event 2: click -->
+                <button class="btn btn-orange w-100" onclick="estimateCalories()">Estimate Calories</button>
+
+                <div id="calorieResult" class="mt-3 result-box" style="display:none;"></div>
+            </div>
+        </div>
+
+        <!-- TOOL 3: Star Rating Widget -->
+        <div class="col-md-6">
+            <div class="intro-box p-4 rounded">
+                <h4>⭐ Quick Star Rater</h4>
+                <p>Click a star to rate your last meal experience.</p>
+                <div id="starRating" class="star-row mb-3" role="group" aria-label="Star rating selector">
+                    <span class="star" onclick="rateStar(1)" tabindex="0" aria-label="1 star">★</span>
+                    <span class="star" onclick="rateStar(2)" tabindex="0" aria-label="2 stars">★</span>
+                    <span class="star" onclick="rateStar(3)" tabindex="0" aria-label="3 stars">★</span>
+                    <span class="star" onclick="rateStar(4)" tabindex="0" aria-label="4 stars">★</span>
+                    <span class="star" onclick="rateStar(5)" tabindex="0" aria-label="5 stars">★</span>
+                </div>
+                <div id="ratingResult" class="result-box" style="display:none;"></div>
+            </div>
+        </div>
+
+        <!-- TOOL 4: Cuisine Quiz -->
+        <div class="col-md-6">
+            <div class="intro-box p-4 rounded">
+                <h4>🌍 What Cuisine Should You Try?</h4>
+                <p>Answer two quick questions and we'll suggest a cuisine for you.</p>
+
+                <label for="moodSelect" class="form-label">What's your mood?</label>
+                <select id="moodSelect" class="form-select mb-3" aria-label="Select your current mood">
+                    <option value="comfort">Comfort food</option>
+                    <option value="adventurous">Something adventurous</option>
+                    <option value="spicy">Spicy and bold</option>
+					<option value="late">Late night dine</option>
+					<option value="healthy">Healthy student meal</option>
+                </select>
+
+                <label for="budgetSelect" class="form-label">What's your budget?</label>
+                <select id="budgetSelect" class="form-select mb-3" aria-label="Select your budget range">
+                    <option value="low">Under $15</option>
+                    <option value="mid">$15–$30</option>
+                    <option value="high">$30+</option>
+                </select>
+
+                <!-- Event 3: click -->
+                <button class="btn btn-orange w-100" onclick="suggestCuisine()">Suggest a Cuisine!</button>
+
+                <div id="cuisineResult" class="mt-3 result-box" style="display:none;"></div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer text-center py-4 mt-5">
+    <p>We acknowledge the Traditional Owners of the land on which this website was created — the Wurundjeri people of the Kulin Nation — and pay our respects to Elders past, present, and emerging.</p>
+    <p>Follow us: <a href="https://instagram.com" target="_blank">Instagram</a> | <a href="https://tiktok.com" target="_blank">TikTok</a></p>
+    <p>COPYRIGHT &copy; 2026 Campus Cravings| Abel & Caeleb</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// ---- Tool 1: Tip Calculator ----
+function calculateTip() {
+    const bill = parseFloat(document.getElementById('billAmount').value);
+    const tip  = parseInt(document.getElementById('tipPercent').value);
+    const people = parseInt(document.getElementById('numPeople').value);
+    const result = document.getElementById('tipResult');
+
+    // Logic rule 1: validate inputs with nested if/else
+    if (isNaN(bill) || bill <= 0) {
+        result.style.display = 'block';
+        result.innerHTML = '⚠️ Please enter a valid bill amount.';
+        result.className = 'mt-3 result-box alert alert-warning';
+    } else if (isNaN(people) || people < 1) {
+        result.style.display = 'block';
+        result.innerHTML = '⚠️ Please enter a valid number of people.';
+        result.className = 'mt-3 result-box alert alert-warning';
+    } else {
+        const tipAmount  = (bill * tip) / 100;
+        const total      = bill + tipAmount;
+        const perPerson  = total / people;
+        result.style.display = 'block';
+        result.className = 'mt-3 result-box alert alert-success';
+        result.innerHTML = `
+            <strong>Tip Amount:</strong> $${tipAmount.toFixed(2)}<br>
+            <strong>Total Bill:</strong> $${total.toFixed(2)}<br>
+            <strong>Per Person:</strong> $${perPerson.toFixed(2)}
+        `;
+    }
+}
+
+// ---- Tool 2: Calorie Estimator ----
+function estimateCalories() {
+    // Logic rule 2: array and lookup
+    const calories = {
+        ramen: 550, pizza: 285, burger: 650,
+        salad: 120, sushi: 360, pho: 400, tacos: 480
+    };
+    const meal     = document.getElementById('mealSelect').value;
+    const servings = parseInt(document.getElementById('servings').value);
+    const result   = document.getElementById('calorieResult');
+    const total    = calories[meal] * servings;
+
+    result.style.display = 'block';
+    result.className = 'mt-3 result-box alert alert-info';
+
+    // Nested if/else for calorie feedback
+    let feedback = '';
+    if (total < 300) {
+        feedback = '✅ That\'s a light meal!';
+    } else if (total < 600) {
+        feedback = '👍 A solid, moderate meal.';
+    } else if (total < 900) {
+        feedback = '⚠️ That\'s quite filling — maybe share it!';
+    } else {
+        feedback = '🔥 High calorie — consider a walk after!';
+    }
+
+    result.innerHTML = `
+        <strong>Estimated Calories:</strong> ${total} kcal<br>
+        ${feedback}
+    `;
+}
+
+// ---- Tool 3: Star Rater ----
+function rateStar(n) {
+    const stars = document.querySelectorAll('.star');
+    // Loop through stars and highlight up to selected
+    for (let i = 0; i < stars.length; i++) {
+        if (i < n) {
+            stars[i].classList.add('active');
+        } else {
+            stars[i].classList.remove('active');
+        }
+    }
+    const labels = ['', 'Poor 😞', 'Fair 😐', 'Good 😊', 'Great 😄', 'Amazing! 🤩'];
+    const result = document.getElementById('ratingResult');
+    result.style.display = 'block';
+    result.className = 'result-box alert alert-success';
+    result.innerHTML = `You rated: <strong>${n}/5</strong> — ${labels[n]}`;
+}
+
+// ---- Tool 4: Cuisine Suggester ----
+function suggestCuisine() {
+    const mood   = document.getElementById('moodSelect').value;
+    const budget = document.getElementById('budgetSelect').value;
+    const result = document.getElementById('cuisineResult');
+
+   const suggestions = {
+    comfort: {
+        low: 'Vietnamese Pho 🍜 – warm, filling, and affordable!',
+        mid: 'Japanese Ramen 🍥 – the ultimate comfort bowl.',
+        high: 'French Bistro 🥐 – rich, hearty, and indulgent.'
+    },
+    adventurous: {
+        low: 'Street Tacos 🌮 – bold flavours on a budget.',
+        mid: 'Korean BBQ 🥩 – grill your own meat!',
+        high: 'Omakase Sushi 🍣 – let the chef surprise you.'
+    },
+    healthy: {
+        low: 'Garden Salad Bar 🥗 – fresh and light.',
+        mid: 'Poke Bowl 🐟 – colourful and nutritious.',
+        high: 'Mediterranean Mezze 🫒 – wholesome and elegant.'
+    },
+    spicy: {
+        low: 'Thai Street Food 🌶️ – fiery and cheap.',
+        mid: 'Indian Curry 🍛 – rich, spiced, and satisfying.',
+        high: 'Sichuan Hot Pot 🔥 – the boldest dining experience.'
+    },
+    late: {
+        low: 'Delhi Rocks 🍛 – Open until midnight or 2am on weekends.',
+        mid: 'GYG 🌯 – Basic but great late-night food.',
+        high: 'Gimlet 🍖 – A nice late-night dining experience.'
+    }
+};
+    const suggestion = suggestions[mood][budget];
+    result.style.display = 'block';
+    result.className = 'mt-3 result-box alert alert-warning';
+    result.innerHTML = `🍴 We suggest: <strong>${suggestion}</strong>`;
+}
+</script>
+
+</body>
+</html>
