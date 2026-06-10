@@ -1,18 +1,20 @@
 /* =============================================
-   my_style.css – Able Eats External Stylesheet
+   my_style.css – Campus Cravings Stylesheet
    ============================================= */
-
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap');
 
 :root {
     --brand-orange: #E8640A;
     --brand-dark:   #1A1A1A;
-    --brand-cream:  #FFF8F0;
+    --brand-cream:  #d0e8f5;
     --brand-green:  #2D6A4F;
     --text-main:    #222222;
     --text-light:   #FFFFFF;
 }
 
+/* =============================================
+   BASE
+   ============================================= */
 body {
     font-family: 'Lato', sans-serif;
     background-color: var(--brand-cream);
@@ -22,6 +24,9 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
+/* =============================================
+   DARK MODE
+   ============================================= */
 body.dark-mode {
     background-color: #121212;
     color: #F0F0F0;
@@ -33,7 +38,24 @@ body.dark-mode .intro-box {
 body.dark-mode .site-footer {
     background-color: #0A0A0A;
 }
+body.dark-mode .card {
+    background-color: #1E1E1E;
+    border-color: #444;
+    color: #F0F0F0;
+}
+body.dark-mode .card-text {
+    color: #CCCCCC;
+}
+body.dark-mode .navbar {
+    background-color: #0A0A0A !important;
+}
+body.dark-mode .section-heading {
+    color: #7ecbf0;
+}
 
+/* =============================================
+   HEADER
+   ============================================= */
 .site-header {
     background-color: var(--brand-orange);
     color: var(--text-light);
@@ -59,14 +81,32 @@ body.dark-mode .site-footer {
     height: auto;
 }
 
+/* =============================================
+   NAVIGATION
+   ============================================= */
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--brand-orange) !important;
+}
+.nav-link:hover {
+    color: var(--brand-orange) !important;
+}
+
+/* =============================================
+   CAROUSEL
+   ============================================= */
 .carousel-img {
     height: 400px;
     object-fit: cover;
 }
 
+/* =============================================
+   INTRO / CONTENT BOXES
+   ============================================= */
 .intro-box {
     background-color: #FFFFFF;
-    border: 1px solid #E0D6CC;
+    border: 1px solid #b8d8ed;
     box-shadow: 0 2px 8px rgba(0,0,0,0.07);
 }
 .intro-box h2 {
@@ -81,6 +121,9 @@ body.dark-mode .site-footer {
     margin-bottom: 6px;
 }
 
+/* =============================================
+   SECTION HEADINGS
+   ============================================= */
 .section-heading {
     font-family: 'Playfair Display', serif;
     color: var(--brand-green);
@@ -89,15 +132,74 @@ body.dark-mode .site-footer {
     margin-bottom: 16px;
 }
 
-.navbar-brand {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    color: var(--brand-orange) !important;
+/* =============================================
+   CARDS (Reviews, etc.)
+   ============================================= */
+.card {
+    border: 1px solid #b8d8ed;
+    background-color: #ffffff;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
-.nav-link:hover {
-    color: var(--brand-orange) !important;
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+.card-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--brand-orange);
+}
+.review-img {
+    height: 200px;
+    object-fit: cover;
 }
 
+/* =============================================
+   BADGES
+   ============================================= */
+.badge.bg-warning {
+    font-size: 0.85rem;
+}
+
+/* =============================================
+   FORMS (Submit Review page)
+   ============================================= */
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--brand-orange);
+    box-shadow: 0 0 0 0.2rem rgba(232, 100, 10, 0.25);
+}
+label {
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+/* =============================================
+   BUTTONS
+   ============================================= */
+.btn-primary {
+    background-color: var(--brand-orange);
+    border-color: var(--brand-orange);
+    color: #fff;
+}
+.btn-primary:hover {
+    background-color: #c4520a;
+    border-color: #c4520a;
+}
+
+/* =============================================
+   TABLES (if used on any page)
+   ============================================= */
+.table thead {
+    background-color: var(--brand-orange);
+    color: #fff;
+}
+.table-hover tbody tr:hover {
+    background-color: #e4f3fb;
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
 .site-footer {
     background-color: var(--brand-dark);
     color: #CCCCCC;
@@ -111,13 +213,23 @@ body.dark-mode .site-footer {
     text-decoration: underline;
 }
 
+/* =============================================
+   RESPONSIVE
+   ============================================= */
 @media (max-width: 576px) {
     .brand-name { font-size: 2rem; }
     .carousel-img { height: 200px; }
+    .review-img { height: 160px; }
 }
 
+/* =============================================
+   PRINT
+   ============================================= */
 @media print {
-    .navbar, .carousel-control-prev, .carousel-control-next, #darkModeBtn {
+    .navbar,
+    .carousel-control-prev,
+    .carousel-control-next,
+    #darkModeBtn {
         display: none !important;
     }
     body {
@@ -125,6 +237,4 @@ body.dark-mode .site-footer {
         color: black;
     }
 }
-
-
 
